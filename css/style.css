@@ -195,7 +195,6 @@ h6 {
 .header__main {
   max-width: 1175px;
   width: 100%;
-  background-color: var(--color-2);
   color: var(--color-1);
   padding-bottom: 40px;
   padding-left: 60px;
@@ -209,7 +208,7 @@ h6 {
   left: 0;
   width: 10000%;
   height: 100%;
-  background-color: var(--color-2);
+  background-color: #000000c2 !important;
   z-index: -1;
 }
 @media (max-width: 560px) {
