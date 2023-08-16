@@ -652,6 +652,36 @@
         const da = new DynamicAdapt("max");
         da.init();
         __webpack_require__(90);
+        function mySpoller() {
+            let buttons = document.querySelectorAll(".spoller-button-js");
+            function funcDelete() {
+                for (let elem of buttons) {
+                    elem.classList.remove("active-button");
+                    let bodyElem = elem.nextElementSibling;
+                    bodyElem.classList.remove("active-spoller");
+                }
+            }
+            for (let button of buttons) button.addEventListener("click", (function(e) {
+                e.preventDefault();
+                const targ = e.target;
+                if (!targ.closest(".active-button")) funcDelete();
+                let bodyItem = this.nextElementSibling;
+                this.classList.toggle("active-button");
+                bodyItem.classList.toggle("active-spoller");
+                if (bodyItem) if (bodyItem.style.maxHeight) {
+                    button.classList.remove("active-button");
+                    bodyItem.style.maxHeight = null;
+                } else bodyItem.style.maxHeight = bodyItem.scrollHeight + "px";
+                window.addEventListener("click", (e => {
+                    const target = e.target;
+                    if (!target.closest(".spoller-button-js")) {
+                        bodyItem.classList.remove("active-spoller");
+                        button.classList.remove("active-button");
+                    }
+                }));
+            }));
+        }
+        mySpoller();
         window["FLS"] = true;
         isWebp();
         menuInit();
