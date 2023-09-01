@@ -169,7 +169,7 @@ h6 {
 
 @media (max-width: 850px) {
   .header {
-    background-color: #000000c2 !important;
+    background-color: #8ac34a !important;
   }
 }
 .header__body {
@@ -265,6 +265,11 @@ h6 {
     flex-wrap: wrap;
   }
 }
+@media (max-width: 850px) {
+  .header__box-main {
+    justify-content: center;
+  }
+}
 .header__contacts {
   margin-right: 25px;
   font-size: var(--fz-2);
@@ -293,6 +298,11 @@ h6 {
 .header__contacts-phone a {
   white-space: nowrap;
 }
+@media (max-width: 850px) {
+  .header__contacts-phone {
+    display: none;
+  }
+}
 .header__contacts-mail {
   display: flex;
 }
@@ -302,6 +312,25 @@ h6 {
 }
 .header__contacts-mail a {
   white-space: nowrap;
+}
+@media (max-width: 850px) {
+  .header__contacts-mail {
+    display: none;
+  }
+}
+.header__soc-catalog {
+  text-align: center;
+}
+@media (min-width: 850px) {
+  .header__soc-catalog {
+    display: none;
+  }
+}
+.header__soc-catalog p {
+  margin-bottom: 15px;
+}
+.header__soc-catalog p:last-child {
+  margin-bottom: 0px;
 }
 .header__social {
   display: flex;
@@ -670,6 +699,7 @@ h6 {
   font-family: "FiraSansCondensed";
   font-size: var(--fz-4);
   line-height: 15px;
+  z-index: 6;
 }
 @media (max-width: 1250px) {
   .advantages-main__item p {
